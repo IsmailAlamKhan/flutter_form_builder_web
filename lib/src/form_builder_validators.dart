@@ -20,8 +20,7 @@ class FormBuilderValidators {
   }
 
   /// [FormFieldValidator] that requires the field have a non-empty value.
-  static FormFieldValidator<T> required<T>(
-    BuildContext context, {
+  static FormFieldValidator<T> required<T>({
     String errorText,
   }) {
     return (T valueCandidate) {
@@ -38,7 +37,6 @@ class FormBuilderValidators {
   /// [FormFieldValidator] that requires the field's value be equal to the
   /// provided value.
   static FormFieldValidator<T> equal<T>(
-    BuildContext context,
     T value, {
     String errorText,
   }) =>
@@ -47,7 +45,6 @@ class FormBuilderValidators {
   /// [FormFieldValidator] that requires the field's value be not equal to
   /// the provided value.
   static FormFieldValidator<T> notEqual<T>(
-    BuildContext context,
     T value, {
     String errorText,
   }) =>
@@ -56,7 +53,6 @@ class FormBuilderValidators {
   /// [FormFieldValidator] that requires the field's value to be greater than
   /// (or equal) to the provided number.
   static FormFieldValidator<T> min<T>(
-    BuildContext context,
     num min, {
     bool inclusive = true,
     String errorText,
@@ -79,7 +75,6 @@ class FormBuilderValidators {
   /// [FormFieldValidator] that requires the field's value to be less than
   /// (or equal) to the provided number.
   static FormFieldValidator<T> max<T>(
-    BuildContext context,
     num max, {
     bool inclusive = true,
     String errorText,
@@ -102,7 +97,6 @@ class FormBuilderValidators {
   /// [FormFieldValidator] that requires the length of the field's value to be
   /// greater than or equal to the provided minimum length.
   static FormFieldValidator<String> minLength(
-    BuildContext context,
     int minLength, {
     bool allowEmpty = false,
     String errorText,
@@ -119,7 +113,6 @@ class FormBuilderValidators {
   /// [FormFieldValidator] that requires the length of the field's value to be
   /// less than or equal to the provided maximum length.
   static FormFieldValidator<String> maxLength(
-    BuildContext context,
     int maxLength, {
     String errorText,
   }) {
@@ -131,8 +124,7 @@ class FormBuilderValidators {
   }
 
   /// [FormFieldValidator] that requires the field's value to be a valid email address.
-  static FormFieldValidator<String> email(
-    BuildContext context, {
+  static FormFieldValidator<String> email({
     String errorText,
   }) =>
       (valueCandidate) =>
@@ -141,8 +133,7 @@ class FormBuilderValidators {
               : null;
 
   /// [FormFieldValidator] that requires the field's value to be a valid url.
-  static FormFieldValidator<String> url(
-    BuildContext context, {
+  static FormFieldValidator<String> url({
     String errorText,
     List<String> protocols = const ['http', 'https', 'ftp'],
     bool requireTld = true,
@@ -164,7 +155,6 @@ class FormBuilderValidators {
 
   /// [FormFieldValidator] that requires the field's value to match the provided regex pattern.
   static FormFieldValidator<String> match(
-    BuildContext context,
     String pattern, {
     String errorText,
   }) =>
@@ -174,8 +164,7 @@ class FormBuilderValidators {
           : null;
 
   /// [FormFieldValidator] that requires the field's value to be a valid number.
-  static FormFieldValidator<String> numeric(
-    BuildContext context, {
+  static FormFieldValidator<String> numeric({
     String errorText,
   }) =>
       (valueCandidate) => true == valueCandidate?.isNotEmpty &&
@@ -184,8 +173,7 @@ class FormBuilderValidators {
           : null;
 
   /// [FormFieldValidator] that requires the field's value to be a valid integer.
-  static FormFieldValidator<String> integer(
-    BuildContext context, {
+  static FormFieldValidator<String> integer({
     String errorText,
     int radix,
   }) =>
@@ -195,8 +183,7 @@ class FormBuilderValidators {
           : null;
 
   /// [FormFieldValidator] that requires the field's value to be a valid credit card number.
-  static FormFieldValidator<String> creditCard(
-    BuildContext context, {
+  static FormFieldValidator<String> creditCard({
     String errorText,
   }) =>
       (valueCandidate) =>
@@ -206,8 +193,7 @@ class FormBuilderValidators {
 
   /// [FormFieldValidator] that requires the field's value to be a valid IP address.
   /// * [version] is a `String` or an `int`.
-  static FormFieldValidator<String> ip(
-    BuildContext context, {
+  static FormFieldValidator<String> ip({
     dynamic version,
     String errorText,
   }) =>
@@ -217,8 +203,7 @@ class FormBuilderValidators {
               : null;
 
   /// [FormFieldValidator] that requires the field's value to be a valid date string.
-  static FormFieldValidator<String> dateString(
-    BuildContext context, {
+  static FormFieldValidator<String> dateString({
     String errorText,
   }) =>
       (valueCandidate) =>
